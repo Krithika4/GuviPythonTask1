@@ -1,0 +1,32 @@
+"""
+Word Scramble
+"""
+
+import random
+words=['python','javascript','java','automation','pytest','guvi','selenium']
+attempt=0
+#pick random word
+original_word=random.choice(words)
+
+#coverting word into list of letters
+letters=list(original_word)
+
+#shuffle the letters
+random.shuffle(letters)
+
+#join the letters back to word
+scrambled_word=''.join(letters)
+print("Unscrambled word:")
+print(scrambled_word)
+
+while True:
+    guess=input("Guess any word from the list").lower()
+    attempt+=1
+    #print("DEBUG:",guess,"|",original_word)
+    if guess==original_word:
+        print("Congrats!!")
+        break
+    else:
+        print("Wrong guess!!")
+
+
